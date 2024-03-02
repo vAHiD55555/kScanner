@@ -73,17 +73,32 @@ const Home: NextPage = () => {
         <link rel="manifest" href="/manifest.json" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://scanner.github1.cloud/" />
-        <meta name="twitter:title" content="Cloudflare Scanner | اسکنر آیپی تمیز کلودفلر" />
-        <meta name="twitter:description" content="Cloudflare Clean IP Scanner" />
+        <meta
+          name="twitter:title"
+          content="Cloudflare Scanner | اسکنر آیپی تمیز کلودفلر"
+        />
+        <meta
+          name="twitter:description"
+          content="Cloudflare Clean IP Scanner"
+        />
         <meta name="twitter:image" content="/icons/twitter.png" />
         <meta name="twitter:creator" content="@DavidWShadow" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Cloudflare Scanner | اسکنر آیپی تمیز کلودفلر" />
+        <meta
+          property="og:title"
+          content="Cloudflare Scanner | اسکنر آیپی تمیز کلودفلر"
+        />
         <meta property="og:description" content="Cloudflare Clean IP Scanner" />
-        <meta property="og:site_name" content="Cloudflare Scanner | اسکنر آیپی تمیز کلودفلر" />
+        <meta
+          property="og:site_name"
+          content="Cloudflare Scanner | اسکنر آیپی تمیز کلودفلر"
+        />
         <meta property="og:url" content="https://scanner.github1.cloud/" />
         <meta property="og:image" content="/icons/og.png" />
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        />
         {/* add the following only if you want to add a startup image for Apple devices. */}
         {/* <link
           rel="apple-touch-startup-image"
@@ -120,7 +135,10 @@ const Home: NextPage = () => {
           href="/images/apple_splash_640.png"
           sizes="640x1136"
         /> */}
-        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        />
       </Head>
       <main className="flex h-full max-w-full flex-col items-center justify-center px-3">
         <div className="max-h-full w-[900px] max-w-full rounded-lg bg-slate-200 p-5 text-gray-700">
@@ -131,39 +149,39 @@ const Home: NextPage = () => {
                 <MagnifyingGlassCircleIcon className="mb-2 inline-block h-10 w-10" />
               </h1>
             </div>
-              <div className="flex w-full items-center justify-center py-4">
-                <label className="inline-flex h-12 items-center justify-center rounded-lg bg-white p-2">
-                  Max Count:
-                  <input
-                    type="number"
-                    id="max-ip"
-                    value={maxIPCount}
-                    onChange={(e) =>
-                      setSettings({ maxIPCount: e.target.valueAsNumber })
-                    }
-                    disabled={isRunning}
-                    min={1}
-                    max={500}
-                    className="ml-2 rounded-md border-0 px-2 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 sm:text-sm sm:leading-6"
-                  />
-                </label>
-                <label className="inline-flex h-12 items-center justify-center rounded-lg bg-white p-2">
-                  Maximum Delay:
-                  <input
-                    type="number"
-                    id="max-latency"
-                    value={maxLatency}
-                    disabled={isRunning}
-                    onChange={(e) =>
-                      setSettings({ maxLatency: e.target.valueAsNumber })
-                    }
-                    min={150}
-                    max={3000}
-                    step={50}
-                    className="ml-2 rounded-md border-0 px-2 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 sm:text-sm sm:leading-6"
-                  />
-                </label>
-              </div>
+            <div className="flex w-full items-center justify-center py-4">
+              <label className="inline-flex h-12 items-center justify-center rounded-lg bg-white p-2">
+                Max Count:
+                <input
+                  type="number"
+                  id="max-ip"
+                  value={maxIPCount}
+                  onChange={(e) =>
+                    setSettings({ maxIPCount: e.target.valueAsNumber })
+                  }
+                  disabled={isRunning}
+                  min={1}
+                  max={500}
+                  className="ml-2 rounded-md border-0 px-2 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 sm:text-sm sm:leading-6"
+                />
+              </label>
+              <label className="inline-flex h-12 items-center justify-center rounded-lg bg-white p-2">
+                Maximum Delay:
+                <input
+                  type="number"
+                  id="max-latency"
+                  value={maxLatency}
+                  disabled={isRunning}
+                  onChange={(e) =>
+                    setSettings({ maxLatency: e.target.valueAsNumber })
+                  }
+                  min={150}
+                  max={3000}
+                  step={50}
+                  className="ml-2 rounded-md border-0 px-2 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 sm:text-sm sm:leading-6"
+                />
+              </label>
+            </div>
             <div className="flex w-full items-center justify-center py-4">
               <label className="inline-flex h-12 items-center justify-center rounded-lg bg-white p-2">
                 Regex for IP:
