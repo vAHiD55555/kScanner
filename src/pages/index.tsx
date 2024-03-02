@@ -106,7 +106,7 @@ const Home: NextPage = () => {
                             />
                         </label>
                         <label>
-                            Maximum Delay:
+                            Max Delay:
                             <input
                                 type="number"
                                 id="max-latency"
@@ -170,7 +170,6 @@ const Home: NextPage = () => {
                                             Stop Scan <StopIcon className="inline-block h-6 w-6 pb-0.5" />
                                         </button>
                                     )}
-
                                 </>
                             )}
                         </>
