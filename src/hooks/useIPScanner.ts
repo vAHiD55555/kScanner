@@ -200,8 +200,9 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
 
           testCount++;
         } catch (error) {
-          // don't increase testResult if it's not an abort error
-          if (!(error instanceof Error && (error.name === "AbortError" || error.name === "TypeError"))) {
+          if ( error instanceof Error && error.name === "AbortError") {
+            //
+          } else {
             testCount++;
           }
         }
