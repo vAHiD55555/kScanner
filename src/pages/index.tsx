@@ -163,48 +163,49 @@ const Home: NextPage = () => {
                             Stop Scan <StopIcon className="inline-block h-6 w-6 pb-0.5" />
                         </button>
                     )}
+                    <div className="clearfix"></div>
+                    <hr />
+                    <div className="itemDesc">
+                        <div className="itemDesc_info text-center">Test No: {testNo}</div>
+                        <div
+                            className={`itemDesc_info ${
+                                color === "red" ? "text-red-500" : "text-green-500"
+                            } text-center`}
+                        >
+                            {currentIP || "0.0.0.0"}
+                        </div>
+                        <div className="itemDesc_info">
+                            <small>{currentLatency ? '('+currentLatency+')' : ''}</small>
+                        </div>
+                        <div className="itemDesc_info icons">
+                            <ArrowPathRoundedSquareIcon
+                                className={`mx-2 inline-block h-6 w-6 transform-gpu text-center text-blue-600 duration-300 ${tryCharToRotation[tryChar]}`}
+                            />
+                            <TableCellsIcon
+                                onClick={() => download(validIPs, "csv")}
+                                title="Download as CSV"
+                                className={
+                                    (validIPs.length > 0
+                                        ? "cursor-pointer text-blue-600 transition-colors duration-300 hover:text-blue-500 "
+                                        : "cursor-not-allowed text-gray-500 transition-colors duration-300 hover:text-gray-400 ") +
+                                    "mx-2 h-6 w-6"
+                                }
+                            />
+                            <DocumentTextIcon
+                                onClick={() => download(validIPs, "json")}
+                                title="Download as JSON"
+                                className={
+                                    (validIPs.length > 0
+                                        ? "cursor-pointer text-blue-600 transition-colors duration-300 hover:text-blue-500 "
+                                        : "cursor-not-allowed text-gray-500 transition-colors duration-300 hover:text-gray-400 ") +
+                                    "mx-2 h-6 w-6"
+                                }
+                            />
+                        </div>
+                    </div>
                     { validIPs.length > 0 ? (
                         <>
                             <div className="clearfix"></div>
-                            <hr />
-                            <div className="itemDesc">
-                                <div className="itemDesc_info text-center">Test No: {testNo}</div>
-                                <div
-                                    className={`itemDesc_info ${
-                                        color === "red" ? "text-red-500" : "text-green-500"
-                                    } text-center`}
-                                >
-                                    {currentIP || "0.0.0.0"}
-                                </div>
-                                <div className="itemDesc_info">
-                                    <small>{currentLatency ? '('+currentLatency+')' : ''}</small>
-                                </div>
-                                <div className="itemDesc_info icons">
-                                    <ArrowPathRoundedSquareIcon
-                                        className={`mx-2 inline-block h-6 w-6 transform-gpu text-center text-blue-600 duration-300 ${tryCharToRotation[tryChar]}`}
-                                    />
-                                    <TableCellsIcon
-                                        onClick={() => download(validIPs, "csv")}
-                                        title="Download as CSV"
-                                        className={
-                                            (validIPs.length > 0
-                                                ? "cursor-pointer text-blue-600 transition-colors duration-300 hover:text-blue-500 "
-                                                : "cursor-not-allowed text-gray-500 transition-colors duration-300 hover:text-gray-400 ") +
-                                            "mx-2 h-6 w-6"
-                                        }
-                                    />
-                                    <DocumentTextIcon
-                                        onClick={() => download(validIPs, "json")}
-                                        title="Download as JSON"
-                                        className={
-                                            (validIPs.length > 0
-                                                ? "cursor-pointer text-blue-600 transition-colors duration-300 hover:text-blue-500 "
-                                                : "cursor-not-allowed text-gray-500 transition-colors duration-300 hover:text-gray-400 ") +
-                                            "mx-2 h-6 w-6"
-                                        }
-                                    />
-                                </div>
-                            </div>
                             <table className="table table-hover">
                                 <thead>
                                 <tr>

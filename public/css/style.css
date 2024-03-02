@@ -137,9 +137,12 @@ label {
 }
 .itemDesc .icons {
     float: right;
+    margin-right: 0;
 }
 .itemDesc .icons svg {
-    float: right;
+    float: left;
+    margin-right: 0;
+    margin-left: 10px;
 }
 
 footer {
