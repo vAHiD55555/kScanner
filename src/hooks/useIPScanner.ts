@@ -161,7 +161,7 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
   async function testIPs(ipList: string[]) {
     for (const ip of ipList) {
       increaseTestNo();
-      const url = `https://${ip}/__down`;
+      const url = `http://${ip}/__down`;
 
       let testCount = 0;
 
