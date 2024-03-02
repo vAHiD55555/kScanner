@@ -11,6 +11,7 @@ textarea {
     margin: 10px 0;
     width: 100%;
     resize: none;
+    font-weight: normal;
 }
 button {
     width: 100%;
