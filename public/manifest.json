@@ -11,8 +11,8 @@
   "background_color": "#f28119",
   "theme_color": "#ffffff",
   "categories": ["utilities"],
-  "id": "scanner.ircf.space",
-  "bundleId": "scanner.ircf.space",
+  "id": "space.ircf.scanner",
+  "bundleId": "space.ircf.scanner",
   "icons": [
     {
       "src": "/img/icons/192.png",
