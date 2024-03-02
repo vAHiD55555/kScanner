@@ -259,16 +259,12 @@ const Home: NextPage = () => {
                         </>
                     ) : (
                         <>
-                            {isRunning ? (
+                            {isRunning && (
                                 <>
                                     <div className="clearfix"></div>
                                     <div className="alert alert-info text-center">
                                         Please Wait ...
                                     </div>
-                                </>
-                            ): (
-                                <>
-
                                 </>
                             )}
                         </>
