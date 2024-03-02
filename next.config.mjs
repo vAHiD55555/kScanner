@@ -1,4 +1,6 @@
 /** @type {import("next").NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const config = {
   output: 'export',
   images: {   
@@ -6,5 +8,6 @@ const config = {
   },  
   reactStrictMode: true,
   basePath: "/cloudflare-scanner",
+  assetPrefix: isProd ? '/cloudflare-scanner' : undefined,
 };
 export default config;
