@@ -138,11 +138,11 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
   async function startScan() {
     reset();
     try {
+      dispatch({ scanState: "scanning" });
       const ips = state.ipRegex
         ? allIps.filter((el) => new RegExp(state.ipRegex).test(el))
         : allIps;
 
-      dispatch({ scanState: "scanning" });
       await testIPs(randomizeElements(ips));
       setToIdle();
     } catch (e) {
