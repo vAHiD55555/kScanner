@@ -191,7 +191,7 @@ const Home: NextPage = () => {
                                     "mx-2 h-6 w-6"
                                 }
                             />
-                            <DocumentTextIcon
+                            {/*<DocumentTextIcon
                                 onClick={() => download(validIPs, "json")}
                                 title="Download as JSON"
                                 className={
@@ -200,7 +200,7 @@ const Home: NextPage = () => {
                                         : "cursor-not-allowed text-gray-500 transition-colors duration-300 hover:text-gray-400 ") +
                                     "mx-2 h-6 w-6"
                                 }
-                            />
+                            />*/}
                         </div>
                     </div>
                     { validIPs.length > 0 ? (
