@@ -57,6 +57,7 @@ const Home: NextPage = () => {
                     http-equiv="Content-Security-Policy"
                     content="upgrade-insecure-requests"
                 />
+                <link rel="manifest" href="/manifest.json" />
             </Head>
             <nav className="navbar navbar-inverse">
                 <div className="container">
