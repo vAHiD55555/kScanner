@@ -13,30 +13,30 @@ You can find the latest deployment here: [https://cloudflare-scanner.vercel.app/
 ### Requirements
 
 - Node.js 18+
-- pnpm 8+
+- npm 8+
 
 ### Installation of dependencies
 
 ```bash
-pnpm install
+npm install
 ```
 
 ### Running the app in development mode
 
 ```bash
-pnpm dev
+npm dev
 ```
 
 ### Building the app for production
 
 ```bash
-pnpm build
+npm build
 ```
 
 ### Running the app in production mode
 
 ```bash
-pnpm start
+npm start
 ```
 
 ## License
