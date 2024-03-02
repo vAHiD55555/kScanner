@@ -7,7 +7,5 @@ const config = {
     unoptimized: true,
   },  
   reactStrictMode: true,
-  basePath: "/kscanner",
-  assetPrefix: isProd ? '/kscanner/' : undefined,
 };
 export default config;
