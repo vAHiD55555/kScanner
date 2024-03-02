@@ -1,7 +1,7 @@
 # kScanner
 ## Cloudflare Clean ip scanner
 
-![screenshot.png](screenshot.png)
+![screenshot.jpg](screenshot.jpg)
 
 ---
 ## Acknowledgements
