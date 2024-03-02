@@ -96,7 +96,7 @@ const Home: NextPage = () => {
                                 }
                                 disabled={isRunning}
                                 min={1}
-                                max={500}
+                                max={100}
                                 className="form-control dirLeft"
                             />
                         </label>
