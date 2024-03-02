@@ -131,13 +131,6 @@ const Home: NextPage = () => {
                         />
                     </label>
                     <div className="clearfix"></div>
-                    { typeof ipInfo !== "undefined" && ipInfo.countryCode !== 'IR' && (
-                        <>
-                            <div className="alert alert-danger text-center">
-                                Notice: Please turn off your vpn!
-                            </div>
-                        </>
-                    )}
                     {/*<div className="alert alert-info">
                         <UserIP
                             ip={ipInfo.ipAddress}
@@ -148,20 +141,29 @@ const Home: NextPage = () => {
                             }
                         />
                     </div>*/}
-                    <div className="clearfix"></div>
-                    {!isRunning ? (
-                        <button className="btn btn-block btn-primary" onClick={startScan}>
-                            Start Scan <PlayIcon className="inline-block h-6 w-6 pb-0.5" />
-                        </button>
-                    ) : (
-                        <button
-                            className="btn btn-block btn-warning"
-                            type="button"
-                            onClick={stopScan}
-                            disabled={scanState === "stopping"}
-                        >
-                            Stop Scan <StopIcon className="inline-block h-6 w-6 pb-0.5" />
-                        </button>
+                    { typeof ipInfo !== "undefined" && ipInfo.countryCode !== 'IR' ? (
+                        <>
+                            <div className="alert alert-danger text-center">
+                                Please turn off your VPN!
+                            </div>
+                        </>
+                    ): (
+                        <>
+                            {!isRunning ? (
+                                <button className="btn btn-block btn-primary" onClick={startScan}>
+                                    Start Scan <PlayIcon className="inline-block h-6 w-6 pb-0.5" />
+                                </button>
+                            ) : (
+                                <button
+                                    className="btn btn-block btn-warning"
+                                    type="button"
+                                    onClick={stopScan}
+                                    disabled={scanState === "stopping"}
+                                >
+                                    Stop Scan <StopIcon className="inline-block h-6 w-6 pb-0.5" />
+                                </button>
+                            )}
+                        </>
                     )}
                     <div className="clearfix"></div>
                     <hr />
