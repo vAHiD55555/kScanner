@@ -262,7 +262,7 @@ const Home: NextPage = () => {
                 </section>
                 <div className="clearfix"></div>
                 <footer className="text-center">
-                    © kiomarzsss, IRCF, VahidFarid, goldsrc
+                    © <a href="https://github.com/kiomarzsss/kscanner" target="_blank">kiomarzsss</a>, IRCF, VahidFarid, goldsrc
                     <br />
                 </footer>
             </div>
