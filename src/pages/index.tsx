@@ -146,39 +146,38 @@ const Home: NextPage = () => {
                             }
                         />
                     </div>*/}
-                    { typeof ipInfo !== "undefined" ? (
+                    {!isRunning ? (
                         <>
-                            { ipInfo.countryCode !== 'IR' ? (
+                            { typeof ipInfo !== "undefined" ? (
                                 <>
-                                    <div className="alert alert-danger text-center">
-                                        Please turn off your VPN!
-                                    </div>
+                                    { ipInfo.countryCode !== 'IR' && (
+                                        <>
+                                            <div className="alert alert-danger text-center">
+                                                Please turn off your VPN!
+                                            </div>
+                                        </>
+                                    )}
                                 </>
                             ) : (
                                 <>
-                                    {!isRunning ? (
-                                        <button className="btn btn-block btn-primary" onClick={startScan}>
-                                            Start Scan <PlayIcon className="inline-block h-6 w-6 pb-0.5" />
-                                        </button>
-                                    ) : (
-                                        <button
-                                            className="btn btn-block btn-warning"
-                                            type="button"
-                                            onClick={stopScan}
-                                            disabled={scanState === "stopping"}
-                                        >
-                                            Stop Scan <StopIcon className="inline-block h-6 w-6 pb-0.5" />
-                                        </button>
-                                    )}
+                                    <div className="alert alert-info text-center">
+                                        Please Wait ...
+                                    </div>
                                 </>
                             )}
+                            <button className="btn btn-block btn-primary" onClick={startScan}>
+                                Start Scan <PlayIcon className="inline-block h-6 w-6 pb-0.5" />
+                            </button>
                         </>
                     ) : (
-                        <>
-                            <div className="alert alert-info text-center">
-                                Please Wait ...
-                            </div>
-                        </>
+                        <button
+                            className="btn btn-block btn-default"
+                            type="button"
+                            onClick={stopScan}
+                            disabled={scanState === "stopping"}
+                        >
+                            Stop Scan <StopIcon className="inline-block h-6 w-6 pb-0.5" />
+                        </button>
                     )}
                     <div className="clearfix"></div>
                     <hr />
@@ -194,7 +193,7 @@ const Home: NextPage = () => {
                             {currentIP || "0.0.0.0"}
                         </div>
                         <div className="itemDesc_info">
-                            <small>{currentLatency ? '('+currentLatency+')' : ''}</small>
+                            <small>{currentLatency ? '('+currentLatency+' ms)' : ''}</small>
                         </div>
                         <div className="itemDesc_info icons">
                             <ArrowPathRoundedSquareIcon
@@ -256,7 +255,16 @@ const Home: NextPage = () => {
                             </table>
                         </>
                     ) : (
-                        <></>
+                        <>
+                            {isRunning && (
+                                <>
+                                    <div className="clearfix"></div>
+                                    <div className="alert alert-info text-center">
+                                        There is nothing to display!
+                                    </div>
+                                </>
+                            )}
+                        </>
                     )}
                 </section>
                 <div className="clearfix"></div>
