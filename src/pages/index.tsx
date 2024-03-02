@@ -138,7 +138,7 @@ const Home: NextPage = () => {
                             </div>
                         </>
                     )}
-                    <div className="alert alert-info">
+                    {/*<div className="alert alert-info">
                         <UserIP
                             ip={ipInfo.ipAddress}
                             location={
@@ -147,7 +147,7 @@ const Home: NextPage = () => {
                                     : "..."
                             }
                         />
-                    </div>
+                    </div>*/}
                     <div className="clearfix"></div>
                     {!isRunning ? (
                         <button className="btn btn-block btn-primary" onClick={startScan}>
@@ -166,7 +166,7 @@ const Home: NextPage = () => {
                     <div className="clearfix"></div>
                     <hr />
                     <div className="itemDesc">
-                        <div className="itemDesc_info text-center">Test No: {testNo}</div>
+                        <div className="itemDesc_info text-center">Test #{testNo}</div>
                         <div
                             className={`itemDesc_info ${
                                 color === "red" ? "text-red-500" : "text-green-500"
