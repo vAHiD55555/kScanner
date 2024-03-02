@@ -57,6 +57,11 @@ const Home: NextPage = () => {
                     http-equiv="Content-Security-Policy"
                     content="upgrade-insecure-requests"
                 />
+                <meta name="theme-color" content="#f28119" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+                />
                 <link rel="manifest" href="/manifest.json" />
             </Head>
             <nav className="navbar navbar-inverse">
