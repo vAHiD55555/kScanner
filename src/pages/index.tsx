@@ -54,6 +54,7 @@ const Home: NextPage = () => {
           content="Cloudflare Scanner to find clean ip"
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </Head>
       <main className="flex h-full max-w-full flex-col items-center justify-center bg-gradient-to-b from-cyan-300 to-cyan-400 px-3">
         <div className="max-h-full w-[900px] max-w-full rounded-lg bg-slate-200 p-5 text-gray-700 shadow-lg">
