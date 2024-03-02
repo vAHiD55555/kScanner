@@ -1,7 +1,7 @@
 {
     "name": "kScanner",
     "description": "Cloudflare Scanner to find cleanIp",
-    "dir": "rtl",
+    "dir": "auto",
     "display": "standalone",
     "orientation": "portrait",
     "scope": "/",
@@ -9,8 +9,8 @@
     "start_url": "/",
     "background_color": "#f28119",
     "theme_color": "#ffffff",
-    "id": "kScanner",
     "categories": ["utilities"],
+    "id": "scanner.ircf.space",
     "icons": [
         {
             "src": "/icons/android-chrome-192x192.png",
