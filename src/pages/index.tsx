@@ -120,7 +120,7 @@ const Home: NextPage = () => {
           href="/images/apple_splash_640.png"
           sizes="640x1136"
         /> */}
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </Head>
       <main className="flex h-full max-w-full flex-col items-center justify-center px-3">
         <div className="max-h-full w-[900px] max-w-full rounded-lg bg-slate-200 p-5 text-gray-700">
