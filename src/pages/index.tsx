@@ -193,7 +193,7 @@ const Home: NextPage = () => {
                             {currentIP || "0.0.0.0"}
                         </div>
                         <div className="itemDesc_info">
-                            <small>{currentLatency ? '('+currentLatency+' ms)' : ''}</small>
+                            <small>{currentLatency ? '('+currentLatency?.toLocaleString()+' ms)' : ''}</small>
                         </div>
                         <div className="itemDesc_info icons">
                             <ArrowPathRoundedSquareIcon
@@ -248,7 +248,10 @@ const Home: NextPage = () => {
                                         >
                                             {ip}
                                         </td>
-                                        <td className="text-center">{latency}</td>
+                                        <td className="text-center">
+                                            {latency?.toLocaleString()}
+                                            <small> ms</small>
+                                        </td>
                                     </tr>
                                 ))}
                                 </tbody>
