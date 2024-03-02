@@ -11,6 +11,13 @@
   "theme_color": "#ffffff",
   "categories": ["utilities"],
   "id": "scanner.ircf.space",
+  "display_override": [
+    "fullscreen",
+    "browser",
+    "minimal-ui",
+    "standalone",
+    "window-controls-overlay"
+  ],
   "icons": [
     {
       "src": "img/icons/windows11/SmallTile.scale-100.png",
