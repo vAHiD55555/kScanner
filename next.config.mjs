@@ -7,7 +7,7 @@ const config = {
     unoptimized: true,
   },  
   reactStrictMode: true,
-  basePath: "/cloudflare-scanner",
-  assetPrefix: isProd ? '/cloudflare-scanner' : undefined,
+  basePath: "/kscanner",
+  assetPrefix: isProd ? '/kscanner/' : undefined,
 };
 export default config;
