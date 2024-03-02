@@ -1,3 +1,3 @@
 export function randomizeElements<T>(arr: T[]) {
-  return [...arr].sort(() => Math.random() - 0.5);
+  return [...arr].sort(() => 0.5 - Math.random() );
 }
