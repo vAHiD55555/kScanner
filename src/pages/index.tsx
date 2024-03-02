@@ -268,10 +268,7 @@ const Home: NextPage = () => {
                                 </>
                             ): (
                                 <>
-                                    <div className="clearfix"></div>
-                                    <div className="alert alert-warning text-center">
-                                        There is nothing to display.
-                                    </div>
+                                    
                                 </>
                             )}
                         </>
