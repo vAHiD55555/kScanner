@@ -49,7 +49,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>kscanner</title>
+        <title>Cloudflare Scanner | اسکنر آیپی تمیز کلودفلر</title>
         <meta name="description" content="Cloudflare Clean IP Scanner" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="mask-icon" href="/icons/mask-icon.svg" color="#FFFFFF" />
@@ -73,16 +73,17 @@ const Home: NextPage = () => {
         <link rel="manifest" href="/manifest.json" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://scanner.github1.cloud/" />
-        <meta name="twitter:title" content="kscanner" />
+        <meta name="twitter:title" content="Cloudflare Scanner | اسکنر آیپی تمیز کلودفلر" />
         <meta name="twitter:description" content="Cloudflare Clean IP Scanner" />
         <meta name="twitter:image" content="/icons/twitter.png" />
         <meta name="twitter:creator" content="@DavidWShadow" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="kscanner" />
+        <meta property="og:title" content="Cloudflare Scanner | اسکنر آیپی تمیز کلودفلر" />
         <meta property="og:description" content="Cloudflare Clean IP Scanner" />
-        <meta property="og:site_name" content="kscanner" />
+        <meta property="og:site_name" content="Cloudflare Scanner | اسکنر آیپی تمیز کلودفلر" />
         <meta property="og:url" content="https://scanner.github1.cloud/" />
         <meta property="og:image" content="/icons/og.png" />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         {/* add the following only if you want to add a startup image for Apple devices. */}
         {/* <link
           rel="apple-touch-startup-image"
@@ -119,18 +120,18 @@ const Home: NextPage = () => {
           href="/images/apple_splash_640.png"
           sizes="640x1136"
         /> */}
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </Head>
-      <main className="flex h-full max-w-full flex-col items-center justify-center bg-gradient-to-b from-cyan-300 to-cyan-400 px-3">
-        <div className="max-h-full w-[900px] max-w-full rounded-lg bg-slate-200 p-5 text-gray-700 shadow-lg">
+      <main className="flex h-full max-w-full flex-col items-center justify-center px-3">
+        <div className="max-h-full w-[900px] max-w-full rounded-lg bg-slate-200 p-5 text-gray-700">
           <section className="flex flex-col items-center border-b-4 border-cyan-600">
             <div className="w-full border-b-4 border-cyan-600 py-4 text-center">
               <h1 className="text-3xl font-bold text-cyan-900">
-                kScanner{" "}
+                Cloudflare Scanner | اسکنر آیپی تمیز کلودفلر{" "}
                 <MagnifyingGlassCircleIcon className="mb-2 inline-block h-10 w-10" />
               </h1>
             </div>
-            <div className="flex w-full flex-col items-center justify-center py-4 md:flex-row">
-              <div className="mb-4 flex w-full items-center justify-center px-2 md:mb-0 md:w-1/2">
+              <div className="flex w-full items-center justify-center py-4">
                 <label className="inline-flex h-12 items-center justify-center rounded-lg bg-white p-2">
                   Max Count:
                   <input
@@ -146,8 +147,6 @@ const Home: NextPage = () => {
                     className="ml-2 rounded-md border-0 px-2 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 sm:text-sm sm:leading-6"
                   />
                 </label>
-              </div>
-              <div className="flex w-full items-center justify-center px-2 md:w-1/2">
                 <label className="inline-flex h-12 items-center justify-center rounded-lg bg-white p-2">
                   Maximum Delay:
                   <input
@@ -161,11 +160,10 @@ const Home: NextPage = () => {
                     min={150}
                     max={3000}
                     step={50}
-                    className="ml-2 w-16 rounded-md border-0 px-2 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 sm:text-sm sm:leading-6"
+                    className="ml-2 rounded-md border-0 px-2 py-1.5 text-center text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200 sm:text-sm sm:leading-6"
                   />
                 </label>
               </div>
-            </div>
             <div className="flex w-full items-center justify-center py-4">
               <label className="inline-flex h-12 items-center justify-center rounded-lg bg-white p-2">
                 Regex for IP:
@@ -280,6 +278,7 @@ const Home: NextPage = () => {
             </table>
           </section>
         </div>
+        <div className="clearfix"></div>
         <footer className="flex h-24 w-full items-center justify-center">
           © kiomarzsss, IRCF, VahidFarid, goldsrc
         </footer>
