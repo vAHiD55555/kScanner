@@ -139,12 +139,12 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
     reset();
     try {
       dispatch({ scanState: "scanning" });
+      setToIdle();
       const ips = state.ipRegex
         ? allIps.filter((el) => new RegExp(state.ipRegex).test(el))
         : allIps;
 
       await testIPs(randomizeElements(ips));
-      setToIdle();
     } catch (e) {
       console.error(e);
     }
