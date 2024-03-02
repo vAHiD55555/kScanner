@@ -215,6 +215,7 @@ const Home: NextPage = () => {
             </table>
           </section>
         </div>
+        <div className="clearfix"></div>
         <footer className="flex h-24 w-full items-center justify-center">
           © kiomarzsss, IRCF, VahidFarid, goldsrc
         </footer>
