@@ -161,7 +161,7 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
   async function testIPs(ipList: string[]) {
     for (const ip of ipList) {
       increaseTestNo();
-      const url = `http://${ip}:80/cdn-cgi/trace`;
+      const url = `http://${ip}/cdn-cgi/trace`;
 
       let testCount = 0;
 
