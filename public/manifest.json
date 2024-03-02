@@ -3,7 +3,7 @@
   "description": "Cloudflare Scanner to find cleanIp",
   "dir": "auto",
   "lang": "en",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
   "short_name": "kScanner",
@@ -12,6 +12,7 @@
   "theme_color": "#ffffff",
   "categories": ["utilities"],
   "id": "scanner.ircf.space",
+  "bundleId": "scanner.ircf.space",
   "icons": [
     {
       "src": "/img/icons/192.png",
