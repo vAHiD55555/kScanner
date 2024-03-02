@@ -104,6 +104,10 @@ ul li {
     display: none;
 }
 
+.alert {
+    margin: 0 0 15px 0;
+}
+
 label {
     float: left;
     width: 100%;
@@ -121,6 +125,11 @@ label {
 }
 .form-group label:last-child {
     float: right;
+}
+
+.btn {
+    padding: 10px;
+    outline: none;
 }
 
 .itemDesc {
