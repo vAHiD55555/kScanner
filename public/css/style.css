@@ -158,6 +158,18 @@ label {
     margin-left: 10px;
 }
 
+.pwa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 10px 0;
+}
+.pwa .pwa_icon {
+    padding: 7px 15px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+}
+
 footer {
     margin: 50px 0 20px 0;
     padding: 10px 0;

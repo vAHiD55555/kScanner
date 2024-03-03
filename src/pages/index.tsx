@@ -272,6 +272,12 @@ const Home: NextPage = () => {
                 </section>
                 <div className="clearfix"></div>
                 <footer className="text-center">
+                    <div className="pwa">
+                        <div className="pwa_icon">
+                            🔒 Install <b>PWA</b> <em className="text-muted">or</em> Download <a href="https://github.com/kiomarzsss/kscanner/releases/latest" target="_blank">APK</a>
+                        </div>
+                    </div>
+                    <div className="clearfix"></div>
                     © <a href="https://github.com/kiomarzsss/kscanner" target="_blank">kiomarzsss</a>, IRCF, VahidFarid, goldsrc
                     <br />
                 </footer>
