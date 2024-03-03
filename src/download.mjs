@@ -34,7 +34,7 @@ https
       const json = JSON.stringify(
         lines.flatMap((line) => {
           const lineTrimmed = line.trim();
-          if ((lineTrimmed.length > 0) & isValidCIDR(lineTrimmed))
+          if ((lineTrimmed.length > 0) && isValidCIDR(lineTrimmed))
             return lineTrimmed;
           return [];
         }),

@@ -14,6 +14,7 @@ import {
 import { copyIPToClipboard } from "~/helpers/copyIPToClipboard";
 import { allIps } from "~/consts";
 import { useUserIPInfo } from "~/hooks/useUserIPInfo";
+import {toast} from "react-hot-toast";
 const UserIP = dynamic(() => import("~/components/UserIP"), { ssr: false });
 
 const Home: NextPage = () => {
@@ -52,11 +53,11 @@ const Home: NextPage = () => {
                     name="description"
                     content="Cloudflare Scanner to find clean ip"
                 />
-                <link rel="icon" href="/favicon.ico" />
                 <meta
                     http-equiv="Content-Security-Policy"
                     content="upgrade-insecure-requests"
                 />
+                <link rel="icon" href="/favicon.ico" />
                 <meta name="theme-color" content="#f28119" />
                 <meta
                     name="viewport"
@@ -165,7 +166,22 @@ const Home: NextPage = () => {
                                     </div>
                                 </>
                             )}
-                            <button className="btn btn-block btn-primary" onClick={startScan}>
+                            <button className="btn btn-block btn-primary"
+                                    onClick={() => {
+                                        toast.loading(`Please Wait ...`, {
+                                            position:"bottom-center",
+                                            style: {
+                                                borderRadius: '10px',
+                                                background: '#333',
+                                                color: '#fff',
+                                            },
+                                            id: "w8"
+                                        });
+                                        setTimeout(function() {
+                                            startScan();
+                                            toast.dismiss('w8');
+                                        }, 100)
+                                    }}>
                                 Start Scan <PlayIcon className="inline-block h-6 w-6 pb-0.5" />
                             </button>
                         </>

@@ -1,3 +1,6 @@
 export function randomizeElements<T>(arr: T[]) {
-  return [...arr].sort(() => 0.5 - Math.random() );
+    let result = [...arr].sort(() => 0.5 - Math.random() );
+    result = result.slice(0, 100);
+    result = result.sort(() => 0.5 - Math.random() );
+    return result;
 }
