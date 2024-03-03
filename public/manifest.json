@@ -7,13 +7,13 @@
     "orientation": "portrait",
     "scope": "/",
     "short_name": "kScanner",
-    "start_url": "/?v1.0.9",
+    "start_url": "/?v1.0.10",
     "background_color": "#f28119",
     "theme_color": "#ffffff",
     "categories": ["utilities"],
     "id": "space.ircf.scanner",
     "bundleId": "space.ircf.scanner",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "icons": [
         {
             "src": "/img/icons/192.png",
