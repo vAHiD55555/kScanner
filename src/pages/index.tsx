@@ -278,7 +278,7 @@ const Home: NextPage = () => {
                         </div>
                     </div>
                     <div className="clearfix"></div>
-                    © <a href="https://github.com/kiomarzsss/kscanner" target="_blank">kiomarzsss</a>, IRCF, VahidFarid, goldsrc
+                    © <a href="https://github.com/kiomarzsss/kscanner" target="_blank">Kiomarzsss</a>, IRCF, VahidFarid, goldSrc
                     <br />
                 </footer>
             </div>
