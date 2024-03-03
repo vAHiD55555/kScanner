@@ -274,7 +274,7 @@ const Home: NextPage = () => {
                 <footer className="text-center">
                     <div className="pwa">
                         <div className="pwa_icon">
-                            🔒 Install <b>PWA</b> <em className="text-muted">or</em> Download <a href="https://github.com/kiomarzsss/kscanner/releases/latest" target="_blank">APK</a>
+                            🔒 Install <b>PWA</b> <em className="text-muted">or</em> Download <a href="https://github.com/kiomarzsss/kscanner/releases/latest" target="_blank">APK version</a>
                         </div>
                     </div>
                     <div className="clearfix"></div>
