@@ -8,7 +8,7 @@ type ValidIP = {
 };
 
 const TRY_CHARS = ["", "|", "/", "-", "\\"] as const;
-const MAX_TRIES = TRY_CHARS.length;
+const MAX_TRIES = 4;
 export type TryChar = (typeof TRY_CHARS)[number];
 
 export type Settings = {
@@ -196,7 +196,7 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
                 try {
                     await fetch(url, {
                         signal: controller.signal,
-                        mode: 'no-cors'
+                        //mode: 'no-cors'
                     });
 
                     testCount++;
