@@ -52,12 +52,12 @@ const Home: NextPage = () => {
     setLoaded(true);
   }, []);
 
-    const router = useRouter();
+    /*const router = useRouter();
     useEffect(() => {
         if (window.location.protocol === 'https:') {
             window.location.href = `http://${window.location.host}${router.asPath}`;
         }
-    }, []);
+    }, []);*/
 
   if (!loaded) return;
 
