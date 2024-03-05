@@ -166,8 +166,7 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
             let testCount = 0;
 
             const startTime = performance.now();
-            const multiply =
-                state.maxLatency <= 500 ? 1.5 : state.maxLatency <= 1000 ? 1.2 : 1;
+            const multiply = state.maxLatency <= 500 ? 1.5 : state.maxLatency <= 1000 ? 1.2 : 1;
             let timeout = 1.5 * multiply * state.maxLatency;
             for (let i = 0; i < MAX_TRIES; i++) {
                 const controller = new AbortController();
@@ -201,9 +200,7 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
 
                     testCount++;
                 } catch (error) {
-                    if ( error instanceof Error && error.name === "AbortError") {
-                        //
-                    } else {
+                    if (error instanceof Error && !["AbortError", "TypeError"].includes(error.name)) {
                         testCount++;
                     }
                 }
