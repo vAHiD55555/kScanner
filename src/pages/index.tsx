@@ -16,7 +16,6 @@ import { allIps } from "~/consts";
 import { useUserIPInfo } from "~/hooks/useUserIPInfo";
 import { toast } from "react-hot-toast";
 import { useEffect, useState } from "react";
-import { useRouter } from 'next/router';
 const UserIP = dynamic(() => import("~/components/UserIP"), { ssr: false });
 
 const Home: NextPage = () => {
@@ -51,13 +50,6 @@ const Home: NextPage = () => {
   useEffect(() => {
     setLoaded(true);
   }, []);
-
-    const router = useRouter();
-    useEffect(() => {
-        if (window.location.protocol === 'https:') {
-            window.location.href = `http://${window.location.host}${router.asPath}`;
-        }
-    }, []);
 
   if (!loaded) return;
 
