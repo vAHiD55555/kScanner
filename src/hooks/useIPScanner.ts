@@ -213,10 +213,12 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
             const latency = Math.floor((performance.now() - startTime) / MAX_TRIES);
 
             if (testCount === MAX_TRIES && latency <= state.maxLatency) {
-                addValidIP({
-                    ip,
-                    latency,
-                });
+                if ( latency > 50 ) {
+                    addValidIP({
+                        ip,
+                        latency,
+                    });
+                }
             }
 
             if (
