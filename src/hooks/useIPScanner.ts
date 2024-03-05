@@ -8,7 +8,7 @@ type ValidIP = {
 };
 
 const TRY_CHARS = ["", "|", "/", "-", "\\"] as const;
-const MAX_TRIES = 5;
+const MAX_TRIES = 3;
 export type TryChar = (typeof TRY_CHARS)[number];
 
 export type Settings = {
