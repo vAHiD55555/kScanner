@@ -8,7 +8,7 @@ type ValidIP = {
 };
 
 const TRY_CHARS = ["", "|", "/", "-", "\\"] as const;
-const MAX_TRIES = 4;
+const MAX_TRIES = 5;
 export type TryChar = (typeof TRY_CHARS)[number];
 
 export type Settings = {
@@ -213,12 +213,10 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
             const latency = Math.floor((performance.now() - startTime) / MAX_TRIES);
 
             if (testCount === MAX_TRIES && latency <= state.maxLatency) {
-                if ( latency > 50 ) {
-                    addValidIP({
-                        ip,
-                        latency,
-                    });
-                }
+                addValidIP({
+                    ip,
+                    latency,
+                });
             }
 
             if (
