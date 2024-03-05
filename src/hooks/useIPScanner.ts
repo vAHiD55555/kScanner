@@ -194,27 +194,30 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
 
         dispatch(newState);
 
+        console.log("url", url);
         await axios({
           url: url,
           method: "GET",
-          // withCredentials: false,
-          // signal: controller.signal,
-          // timeout: 3000,
+          headers: {
+            scheme: "http",
+          },
+          withCredentials: false,
+          signal: controller.signal,
+          timeout: 3000,
         })
           .then((res) => {
             console.log(res);
             testCount++;
           })
           .catch((error) => {
-            console.log(error);
-
             if (error instanceof Error && error.name === "AbortError") {
               //
             } else {
               testCount++;
             }
-          }),
-          clearTimeout(timeoutId);
+          });
+
+        clearTimeout(timeoutId);
       }
 
       const latency = Math.floor((performance.now() - startTime) / MAX_TRIES);
