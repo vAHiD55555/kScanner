@@ -1,7 +1,7 @@
 # kScanner
-## Cloudflare Clean ip scanner
+## Cloudflare Clean IP Scanner with SNI & Port
 
-![screenshot.jpg](screenshot.jpg)
+![screenshot.png](screenshot.png)
 
 ---
 ## Acknowledgements
