@@ -158,7 +158,10 @@ const Home: NextPage = () => {
                         id="sni"
                         value={sniValue}
                         onChange={(e) =>
-                            setSettings({ sniValue: (e.target.value).replace(/^(https?:\/\/)?/, '') })
+                            setSettings({
+                                sniValue: (e.target.value).replace(/^(https?:\/\/)?/, '').replace(' ', '').trim(),
+                                portValue: (e.target.value !== "" ? portValue : 80)
+                            })
                         }
                         disabled={isRunning}
                         className="form-control dirLeft"
@@ -169,7 +172,7 @@ const Home: NextPage = () => {
                     <input
                         type="number"
                         id="max-latency"
-                        value={(sniValue !== "" ? portValue : 80)}
+                        value={portValue}
                         disabled={isRunning}
                         onChange={(e) =>
                             setSettings({ portValue: e.target.valueAsNumber })

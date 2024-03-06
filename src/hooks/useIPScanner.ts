@@ -212,7 +212,6 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
 
                 dispatch(newState);
                 try {
-
                     const axiosInstance = axiosWithSNI(url, state.sniValue, controller.signal, timeout);
                     const response = await axiosInstance.get(path);
                     testCount++;
