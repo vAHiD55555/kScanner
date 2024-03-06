@@ -184,6 +184,10 @@ label {
     width: 100px;
     float: right;
 }
+.groupInput input[id="sni"]:not(:focus) {
+    color: transparent;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
 
 .myToast {
     float: left;
