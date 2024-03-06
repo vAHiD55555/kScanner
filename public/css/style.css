@@ -185,6 +185,34 @@ label {
     float: right;
 }
 
+.myToast {
+    float: left;
+}
+.myToast .myToastConfirm {
+    float: left;
+    width: 100%;
+    margin: 10px 0 0 0;
+}
+.myToast .myToastConfirm button {
+    float: right;
+    padding: 5px 15px;
+    border-radius: 3px;
+    width: auto;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+.myToast .myToastConfirm button[data-act="restart"] {
+    float: right;
+    background: #4b4b4b;
+}
+.myToast .myToastConfirm button[data-act="cancel"] {
+    float: right;
+    margin-left: 7px;
+}
+.myToast .myToastConfirm button:hover {
+    background: #616060;
+}
+
 footer {
     margin: 50px 0 20px 0;
     padding: 10px 0;

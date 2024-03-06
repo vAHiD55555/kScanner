@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { randomizeElements } from "~/helpers/randomizeElements";
 import axiosWithSNI from "./axiosWithSNI";
+import {toast} from "react-hot-toast";
 
 type ValidIP = {
     ip: string;
@@ -106,7 +107,9 @@ export const useScannerStore = create<ScannerStore>()(
                 });
             },
             increaseTestNo: () => {
-                set((state) => ({ testNo: state.testNo + 1 }));
+                set((state) => ({
+                    testNo: state.testNo + 1
+                }));
             },
         }),
         {
@@ -167,6 +170,60 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
         http : [80,  8080, 2052, 2082, 2086, 2095],
         https: [443, 8443, 2053, 2083, 2087, 2096],
     };
+
+    async function reStart() {
+        toast.dismiss('limitation');
+        try {
+            const ips = state.ipRegex
+                ? allIps.filter((el) => new RegExp(state.ipRegex).test(el))
+                : allIps;
+
+            dispatch({ scanState: "scanning" });
+            await testIPs(randomizeElements(ips));
+            setToIdle();
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    async function showToast() {
+        toast(
+            (currentToast) => (
+                <span className="myToast">
+                    In each search, only 150 IPs are evaluated. Do you want to search deeper?
+                    <br />
+                    <div className={"myToastConfirm"}>
+                        <button
+                            data-act="cancel"
+                            onClick={() =>
+                                toast.dismiss(currentToast?.id)
+                            }
+                        >
+                            No
+                        </button>
+                        <button
+                            data-act="restart"
+                            onClick={() => {
+                                reStart();
+                            }}
+                        >
+                            Yes
+                        </button>
+                    </div>
+                </span>
+            ),
+            {
+                id: "limitation",
+                duration: Infinity,
+                position:"bottom-center",
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                },
+            }
+        );
+    }
 
     async function testIPs(ipList: string[]) {
         let isSSL = false;
@@ -258,5 +315,6 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
         ...state,
         startScan,
         stopScan,
+        showToast,
     };
 };

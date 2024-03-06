@@ -37,6 +37,7 @@ const Home: NextPage = () => {
     tryChar,
     validIPs,
     setSettings,
+    showToast,
   } = useIPScanner({ allIps });
 
   const isRunning = scanState !== "idle";
@@ -53,6 +54,14 @@ const Home: NextPage = () => {
   useEffect(() => {
     setLoaded(true);
   }, []);
+
+  useEffect(() => {
+    if ( testNo >= 150 ) {
+        showToast().then(r => {
+            //
+        });
+    }
+  }, [showToast, testNo]);
 
     /*const router = useRouter();
     useEffect(() => {
