@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { randomizeElements } from "~/helpers/randomizeElements";
+import axiosWithSNI from "./axiosWithSNI";
 
 type ValidIP = {
     ip: string;
@@ -15,6 +16,8 @@ export type Settings = {
     maxIPCount: number;
     maxLatency: number;
     ipRegex: string;
+    sniValue: string;
+    portValue: number;
 };
 
 type SettingKeys = keyof Settings;
@@ -55,6 +58,8 @@ export const settingsInitialValues: Pick<ScannerStore, SettingKeys> = {
     maxIPCount: 5,
     maxLatency: 1000,
     ipRegex: "",
+    sniValue: "",
+    portValue: 80,
 };
 
 const initialState: Omit<ScannerStore, FunctionalKeys> = {
@@ -158,10 +163,25 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
         }
     }
 
+    const ports = {
+        http : [80,  8080, 2052, 2082, 2086, 2095],
+        https: [443, 8443, 2053, 2083, 2087, 2096],
+    };
+
     async function testIPs(ipList: string[]) {
+        let isSSL = false;
+        if (ports.https.includes(state.portValue)) {
+            isSSL = true;
+        }
         for (const ip of ipList) {
             increaseTestNo();
-            const url = `http://${ip}/cdn-cgi/trace`;
+
+            let url = `http://${ip}`;
+            let path = `/cdn-cgi/trace`;
+            if (state.sniValue !== '' && isSSL ) {
+                url = `https://${ip}`;
+                path = `/__down`;
+            }
 
             let testCount = 0;
 
@@ -191,8 +211,18 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
                 }
 
                 dispatch(newState);
-
                 try {
+
+                    const axiosInstance = axiosWithSNI(url, state.sniValue, controller.signal, timeout);
+                    const response = await axiosInstance.get(path);
+                    testCount++;
+                } catch (error) {
+                    if (error instanceof Error && !["AbortError", "TypeError"].includes(error.name)) {
+                        testCount++;
+                    }
+                }
+
+                /*try {
                     await fetch(url, {
                         signal: controller.signal,
                         //mode: 'no-cors'
@@ -203,7 +233,7 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
                     if (error instanceof Error && !["AbortError", "TypeError"].includes(error.name)) {
                         testCount++;
                     }
-                }
+                }*/
                 clearTimeout(timeoutId);
             }
 

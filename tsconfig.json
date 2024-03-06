@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es6",
     "types": ["@serwist/next/typings"],
     "lib": ["dom", "dom.iterable", "esnext", "webworker"],
     "allowJs": true,

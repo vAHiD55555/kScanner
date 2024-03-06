@@ -16,7 +16,7 @@ import { allIps } from "~/consts";
 import { useUserIPInfo } from "~/hooks/useUserIPInfo";
 import { toast } from "react-hot-toast";
 import { useEffect, useState } from "react";
-import { useRouter } from 'next/router';
+//import { useRouter } from 'next/router';
 const UserIP = dynamic(() => import("~/components/UserIP"), { ssr: false });
 
 const Home: NextPage = () => {
@@ -28,6 +28,8 @@ const Home: NextPage = () => {
     currentIP,
     currentLatency,
     ipRegex,
+    sniValue,
+    portValue,
     maxIPCount,
     maxLatency,
     scanState,
@@ -148,6 +150,35 @@ const Home: NextPage = () => {
               className="form-control dirLeft"
             />
           </label>
+            <div className="groupInput">
+                <label>
+                    SNI:
+                    <input
+                        type="text"
+                        id="sni"
+                        value={sniValue}
+                        onChange={(e) =>
+                            setSettings({ sniValue: (e.target.value).replace(/^(https?:\/\/)?/, '') })
+                        }
+                        disabled={isRunning}
+                        className="form-control dirLeft"
+                    />
+                </label>
+                <label>
+                    Port:
+                    <input
+                        type="number"
+                        id="max-latency"
+                        value={(sniValue !== "" ? portValue : 80)}
+                        disabled={isRunning}
+                        onChange={(e) =>
+                            setSettings({ portValue: e.target.valueAsNumber })
+                        }
+                        min={80}
+                        className="form-control dirLeft"
+                    />
+                </label>
+            </div>
           <div className="clearfix"></div>
           {/*<div className="alert alert-info">
                         <UserIP
