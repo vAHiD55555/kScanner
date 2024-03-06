@@ -56,7 +56,7 @@ function pick<T extends object, K extends keyof T>(base: T, ...keys: K[]) {
 
 export const settingsInitialValues: Pick<ScannerStore, SettingKeys> = {
     maxIPCount: 5,
-    maxLatency: 1000,
+    maxLatency: 1500,
     ipRegex: "",
     sniValue: "",
     portValue: 80,
