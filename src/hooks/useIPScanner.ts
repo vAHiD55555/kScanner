@@ -170,7 +170,7 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
 
     async function testIPs(ipList: string[]) {
         let isSSL = false;
-        if (ports.https.includes(state.portValue)) {
+        if (state.sniValue !== '' && ports.https.includes(state.portValue)) {
             isSSL = true;
         }
         for (const ip of ipList) {
@@ -178,7 +178,7 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
 
             let url = `http://${ip}:${state.portValue}`;
             let path = `/cdn-cgi/trace`;
-            if (state.sniValue !== '' && isSSL ) {
+            if ( isSSL ) {
                 url = `https://${ip}:${state.portValue}`;
                 path = `/__down`;
             }
