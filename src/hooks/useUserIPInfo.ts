@@ -14,7 +14,7 @@ export const useUserIPInfo = () => {
       zipCode: "00000",
       cityName: "-",
       regionName: "-",
-      isProxy: true,
+      isProxy: false,
     },
   });
 
