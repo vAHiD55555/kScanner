@@ -9,4 +9,5 @@ export type IPInfo = {
   zipCode: string;
   cityName: string;
   regionName: string;
+  isProxy: boolean;
 };

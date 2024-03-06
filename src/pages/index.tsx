@@ -197,10 +197,10 @@ const Home: NextPage = () => {
             <>
               {typeof ipInfo !== "undefined" ? (
                 <>
-                  {ipInfo.countryCode !== "IR" && (
+                  { ( ipInfo.countryCode !== "IR" || ipInfo.isProxy || ipInfo.ipVersion === 6 ) && (
                     <>
                       <div className="alert alert-danger text-center">
-                        Please turn off your VPN!
+                        Please turn off your Proxy!
                       </div>
                     </>
                   )}
