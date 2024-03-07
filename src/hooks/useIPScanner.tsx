@@ -233,7 +233,7 @@ export const useIPScanner = ({ allIps }: IPScannerProps) => {
         for (const ip of ipList) {
             increaseTestNo();
 
-            let url = `http://${ip}:${state.portValue}`;
+            let url = `http://${ip}:${state.portValue < 80 ? 80 : state.portValue}`;
             let path = `/cdn-cgi/trace`;
             if ( isSSL ) {
                 url = `https://${ip}:${state.portValue}`;
